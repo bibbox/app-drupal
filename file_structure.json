@@ -1,0 +1,9 @@
+{
+  "makefolders":[
+    "mounted/mariadb/var/lib/mysql",
+    "mounted/drupal/var/www/html/modules",
+    "mounted/drupal/var/www/html/profiles",
+    "mounted/drupal/var/www/html/themes",
+  ],
+  "copyfiles":[]
+}

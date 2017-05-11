@@ -1,0 +1,50 @@
+version: '2'
+
+networks:
+    bibbox-default-network:
+      external: true
+
+services:
+
+  §§INSTANCE-drupal:
+    image: drupal:8.3.2-apache
+    container_name:  §§INSTANCE-drupal
+    restart: unless-stopped
+    networks:
+      - bibbox-default-network
+    links:
+      - §§INSTANCE-drupal-db:drupal-db
+    ports:
+      - "§§PORT:80"
+    depends_on:
+      - §§INSTANCE-drupal-db
+      - §§INSTANCE-drupal-data
+    volumes_from: 
+      - §§INSTANCE-drupal-data
+
+  §§INSTANCE-drupal-db:
+    image: mariadb
+    container_name: §§INSTANCE-drupal-db
+    restart: unless-stopped
+    networks:
+      - bibbox-default-network
+    user: root
+    environment:
+      - MYSQL_ROOT_PASSWORD=thispasswordisneverusedeveninsidethecontainer
+      - MYSQL_DATABASE=drupal
+      - MYSQL_USER=drupal
+      - MYSQL_PASSWORD=drupal4bibbox
+    volumes_from: 
+      - §§INSTANCE-drupal-data
+    depends_on:
+      - §§INSTANCE-drupal-data
+
+  §§INSTANCE-drupal-data:
+    image: busybox
+    container_name: §§INSTANCE-drupal-data
+    volumes:
+      - ./mounted/mariadb/var/lib/mysql:/var/lib/mysql
+      - ./mounted/drupal/var/www/html/modules:/var/www/html/modules
+      - ./mounted/drupal/var/www/html/profiles:/var/www/html/profiles
+      - ./mounted/drupal/var/www/html/themes:/var/www/html/themes
+

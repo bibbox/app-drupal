@@ -1,0 +1,4 @@
+{
+  "runningcontainers":["§§INSTANCE-drupal", "§§INSTANCE-drupal-db"],
+  "supportcontainers":["§§INSTANCE-drupal-data"]
+}
