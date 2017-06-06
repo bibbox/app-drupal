@@ -1,14 +1,25 @@
 # Drupal BIBBOX application
 
-## Hints
-* approx. time with medium fast internet connection: **5 minutes**
-* initial user/passwordd: **admin / admin**
-
 
 ## Docker Images Used
 
+- drupal:8.3.2-apache
+- mariadb:latest
+- busybox:latest
  
-## Install Environment Variables
+ 
+## Database information
+
+- MYSQL root password: thispasswordisneverusedeveninsidethecontainer
+- Database: drupal
+- User: drupal
+- Password: drupal4bibbox
+- Host: drupal-db
+
 
 ## Mounted Volumes
 
+- /var/lib/mysql
+- /var/www/html/modules
+- /var/www/html/profiles
+- /var/www/html/themes
