@@ -1,10 +1,11 @@
 {
-		"name": "Drupal 8.3.2",
-		"short_name": "Drupal",
-		"version": "v8.3.2",
-		"description": "Drupal is an open source content management platform powering millions of websites and applications.",
+	"name": "Drupal 8.3.2",
+	"short_name": "Drupal",
+	"version": "v8.3.2",
+	"description": "Drupal is an open source content management platform powering millions of websites and applications.",
         "short_description": "Content Management System",
-		"catalogue_url": "",
-		"application_url": "http://drupal.com/",
-		"tags": ["Content Management System"]
+	"catalogue_url": "",
+	"application_url": "http://drupal.com/",
+	"tags": ["Content Management System"],
+	"application_documentation_url": "https://www.drupal.org/documentation"
 }
