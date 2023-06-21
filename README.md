@@ -1,6 +1,6 @@
 # Drupal BIBBOX application
 
-
+## IMPORTANT: This repository is deprecated and should not be used.
 ## Docker Images Used
 
 - drupal:8.3.2-apache
